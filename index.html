@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="js/scripts.js"></script>
-    <title>Document</title>
+    <link  href="style.css" rel="stylesheet" >
+    <title>FORMULARIO</title>
 </head>
 <body>
 
@@ -17,30 +18,39 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="index.html">FORMULARIO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index1.html">DATOS</a></li>                        
+                    <li class="nav-item"><a class="nav-link" href="index1.html">DATOS</a></li>                     
                     
                     
                 </ul>
             </div>
         </div>
     </nav>
-    <title>Llene los datos correspondientes para agendar su cita</title>
-    <div class="mb-3">
-        <label for="formGroupExampleInput" class="form-label">Nombres</label>
-        <input type="text" class="form-control" id="nombres">
-
-        <label for="formGroupExampleInput2" class="form-label">Apellidos</label>
-        <input type="text" class="form-control" id="apellidos">
-
-        <label for="formGroupExampleInput2" class="form-label">Número de cedula</label>
-        <input type="text" class="form-control" id="cedula">
-
-        <label for="formGroupExampleInput2" class="form-label">Telefono</label>
-        <input type="text" class="form-control" id="telefono">
-      </div>
+    <div class="Fondo"> <center>  
+        <div class="mb-3">
+            <title>Llene los datos correspondientes para agendar su cita</title>
+            <label for="formGroupExampleInput" class="form-label">Nombres</label>
+            <input type="text" class="form-control" id="nombres">
+    
+            <label for="formGroupExampleInput2" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos">
+    
+            <label for="formGroupExampleInput2" class="form-label">Número de cedula</label>
+            <input type="text" class="form-control" id="cedula">
+    
+            <label for="formGroupExampleInput2" class="form-label">Telefono</label>
+            <input type="text" class="form-control" id="telefono">
+            <button onclick="guardarDatos()">Guardar</button>
+            <button></button>
+          </div> </center>
+        
+    </div>
+   
      
-      <button onclick="guardarDatos()">Guardar</button>
-      <button></button>
       
+    <!-- pie de pagina-->
+
+    <footer class="py-5 bg-dark">
+        <div class="container"><p class="m-0 text-center text-white">Elaborado por: Wilson Cifuentes 2023</p></div>
+    </footer>
 </body>
 </html>
