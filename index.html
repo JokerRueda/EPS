@@ -26,50 +26,31 @@
             </div>
         </div>
     </nav>
-    
-     
-        <div class="mb-3">
-            <title>Llene los datos correspondientes para agendar su cita</title>
-            <label for="formGroupExampleInput" class="form-label">Nombres</label>
-            <input type="text" class="form-control" id="nombres">
-    
-            <label for="formGroupExampleInput2" class="form-label">Apellidos</label>
-            <input type="text" class="form-control" id="apellidos">
-    
-            <label for="formGroupExampleInput2" class="form-label">Número de cedula</label>
-            <input type="text" class="form-control" id="cedula">
-    
-            <label for="formGroupExampleInput2" class="form-label">Telefono</label>
-            <input type="text" class="form-control" id="telefono">
-            <button onclick="guardarDatos()">Guardar</button>
-            <button></button>
-          </div>
-        
-    
+
     <form class="col-4 p-3 " method="POST">
         <h3 class="text-center text-secondary">Registro de personas</h3>
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" name="nombre">
+            <input type="text" class="form-control" id="nombres">
         </div>
         <div class="mb-3">
             <label for="nombre" class="form-label">Apellido</label>
-            <input type="text" class="form-control" name="apellido">
+            <input type="text" class="form-control" id="apellidos">
         </div>
         <div class="mb-3">
             <label for="nombre" class="form-label">Cedula</label>
-            <input type="text" class="form-control" name="cedula">
+            <input type="text" class="form-control" id="cedula">
         </div>
         <div class="mb-3">
             <label for="nombre" class="form-label">Fecha nacimiento</label>
-            <input type="date" class="form-control" name="fecha">
+            <input type="date" class="form-control" id="fecha">
         </div>
         <div class="mb-3">
             <label for="nombre" class="form-label">Correo</label>
-            <input type="email" class="form-control" name="correo">
+            <input type="email" class="form-control" id="correo">
         </div>
 
-        <button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Registrar</button>
+        <button type="submit" class="btn btn-primary" name="btnregistrar" value="ok" onclick="guardarDatos()">Registrar</button>
     </form>
 
 
