@@ -1,4 +1,3 @@
-
 var nClientes=0
 var clientes=[]
 function guardarDatos(){

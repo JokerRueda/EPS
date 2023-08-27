@@ -27,7 +27,7 @@
         </div>
     </nav>
 
-    <form class="col-4 p-3 " method="POST">
+    
         <h3 class="text-center text-secondary">Registro de personas</h3>
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
@@ -50,8 +50,10 @@
             <input type="email" class="form-control" id="correo">
         </div>
 
-        <button type="submit" class="btn btn-primary" name="btnregistrar" value="ok" onclick="guardarDatos()">Registrar</button>
-    </form>
+        <button onclick="guardarDatos()">Registrar</button>
+
+        <button onclick="mostrarTabla()">Tabla</button>
+    
     <div class="col-8 p-4">
         <table class="table">
             <thead class="bg-info">
