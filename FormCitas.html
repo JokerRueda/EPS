@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="js/scripts.js"></script>
-    <link  href="style.css" rel="stylesheet" >
+    <link href="style.css" rel="stylesheet">
     <title>FORMULARIO</title>
 </head>
+
 <body>
 
-      <!-- parte de arriba de la pagina-->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- parte de arriba de la pagina-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#!">Taller 3- HTML, CSS y JavaScript</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="index.html">FORMULARIO PERSONAS</a></li>
                     <li class="nav-item"><a class="nav-link" href="FormCitas.html">FORMULARIO CITAS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index1.html">DATOS</a></li>                     
-                    
-                    
                 </ul>
             </div>
         </div>
@@ -30,39 +32,75 @@
         <h3 class="text-center text-secondary">Formulario citas</h3>
         <div class="mb-3">
             <label for="nombre" class="form-label">Fecha</label>
-            <input type="text" class="form-control" name="fecha">
+            <input type="text" class="form-control" name="fecha" id="fecha">
         </div>
         <div class="mb-3">
             <label for="nombre" class="form-label">Medico tratante</label>
-            <input type="text" class="form-control" name="medico">
+            <input type="text" class="form-control" name="medico" id="medico">
         </div>
         <div class="mb-3">
             <label for="nombre" class="form-label">Consultorio</label>
-            <input type="text" class="form-control" name="consultorio">
+            <input type="text" class="form-control" name="consultorio" id="consultorio">
         </div>
         <div class="mb-3">
             <label for="nombre" class="form-label">Cede</label>
-            <input type="text" class="form-control" name="cede">
+            <input type="text" class="form-control" name="cede" id="cede">
         </div>
         <div class="mb-3">
             <label for="nombre" class="form-label">Paciente</label>
-            <input type="text" class="form-control" name="paciente">
+            <input type="text" class="form-control" name="paciente" id="paciente">
         </div>
         <div class="mb-3">
             <label for="nombre" class="form-label">Tipo especialidad</label>
-            <input type="text" class="form-control" name="tipoEsp">
+            <input type="text" class="form-control" name="tipoEsp" id="tipoEsp">
         </div>
 
-        <button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Registrar</button>
+        <button onclick="crearCita()">Registrar Citas</button>
     </form>
+    <div class="col-8 p-4">
+        <table class="table" id="tabla">
+            <thead class="bg-info">
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Medico Tratante</th>
+                    <th scope="col">Consultorio</th>
+                    <th scope="col">Cede</th>
+                    <th scope="col">Paciente</th>
+                    <th scope="col">Tipo de especialidad</th>
+                    
+
+                </tr>
+            </thead>
+            <tbody id="listaCita">
+
+            </tbody>
+        </table>
+    </div>
 
 
-     
-      
+
+
     <!-- pie de pagina-->
 
-    <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Elaborado por: Wilson Cifuentes 2023</p></div>
-    </footer>
+
+
+
+    <Script>
+
+        const listaCita = JSON.parse(
+            localStorage.getItem('listaCita')
+        );
+        const listaCitaUI = document.getElementById('listaCita');
+
+        crearTablaCita();
+    </Script>
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">Elaborado por: Wilson Cifuentes, Santiago Rueda, Alberto Arias 2023</p>
+            </div>
+        </footer>
+    
 </body>
+
 </html>

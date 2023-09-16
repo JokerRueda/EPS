@@ -1,82 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="js/scripts.js"></script>
-    <link  href="style.css" rel="stylesheet" >
+    <link href="style.css" rel="stylesheet">
     <title>FORMULARIO</title>
+
 </head>
+
 <body>
 
-      <!-- parte de arriba de la pagina-->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#!">Taller 3- HTML, CSS y JavaScript</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">FORMULARIO PERSONAS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="FormCitas.html">FORMULARIO CITAS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index1.html">DATOS</a></li>                     
-                    
-                    
-                </ul>
+    <div>
+        <!-- parte de arriba de la pagina-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">Taller 3- HTML, CSS y JavaScript</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">FORMULARIO PERSONAS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="FormCitas.html">FORMULARIO CITAS</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    
-        <h3 class="text-center text-secondary">Registro de personas</h3>
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombres">
-        </div>
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="apellidos">
-        </div>
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Cedula</label>
-            <input type="text" class="form-control" id="cedula">
-        </div>
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Fecha nacimiento</label>
-            <input type="date" class="form-control" id="fecha">
-        </div>
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Correo</label>
-            <input type="email" class="form-control" id="correo">
-        </div>
-
-        <button onclick="guardarDatos()">Registrar</button>
-
-        <button onclick="mostrarTabla()">Tabla</button>
-    
+        <form>
+            <h3 class="text-center text-secondary">Registro de personas</h3>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombres" placeholder="nombre" name="nombre">
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellidos" placeholder="apellido" name="apellido">
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Cedula</label>
+                <input type="text" class="form-control" id="cedula" placeholder="cedula" name="cedula">
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Fecha nacimiento</label>
+                <input type="date" class="form-control" id="fecha" placeholder="fecha" name="fecha">
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Correo</label>
+                <input type="email" class="form-control" id="correo" placeholder="correo" name="correo">
+            </div>
+            <button onclick="crearPersona()">Agregar Persona</button>
+    </div>
+    </form>
     <div class="col-8 p-4">
-        <table class="table">
+        <table class="table" id="tabla">
             <thead class="bg-info">
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col"></th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
                     <th scope="col">Cedula</th>
                     <th scope="col">Fecha de nacimiento</th>
                     <th scope="col">Correo</th>
-                    <th scope="col"></th>
 
                 </tr>
             </thead>
-            </table>
+            <tbody id="listaPersona">
+
+            </tbody>
+        </table>
     </div>
 
-     
-      
-    <!-- pie de pagina-->
+
+
+
 
     <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Elaborado por: Wilson Cifuentes 2023</p></div>
-    </footer>
+        <div class="container">
+            <p class="m-0 text-center text-white">Elaborado por: Wilson Cifuentes, Santiago Rueda, Alberto Arias 2023
+            </p>
+        </div>
+
+        <script>
+            const listaPersona = JSON.parse(
+                localStorage.getItem('listaPersona')
+            );
+            const listaPersonaUI = document.getElementById('listaPersona');
+
+            crearTablaPersona();
+
+
+        </script>
 </body>
+
 </html>
