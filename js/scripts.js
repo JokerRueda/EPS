@@ -1,58 +1,108 @@
-var nClientes=0
-var clientes=[]
-function guardarDatos(){
-    let persona={
-        nombre: document.getElementById("nombres").value,
-        apellido: document.getElementById("apellidos").value,
-        cedula: document.getElementById("cedula").value,
-        fecha: document.getElementById("fecha").value,
-        correo: document.getElementById("correo").value
-    }
-    clientes.push(persona)
-    nClientes++
-    guardarStorage()
- };
+//LocalStorage Persona
 
-function guardarStorage(){
-    for (var i = 0; i < nClientes-1; i++) {
-        localStorage.setItem("cliente"+i, JSON.stringify(clientes[i]))
-    }   
-}
- function mostrarTabla(){
-    // Obtener la referencia del elemento body
-    var body = document.getElementsByTagName("body")[0];
-  
-    // Crea un elemento <table> y un elemento <tbody>
-    var tabla = document.createElement("table");
-    var tblBody = document.createElement("tbody");
-  
-    // Crea las celdas
-    for (var i = 0; i < nClientes; i++) {
-      // Crea las hileras de la tabla
-      var hilera = document.createElement("tr");
-  
-      
-        // Crea un elemento <td> y un nodo de texto, haz que el nodo de
-        // texto sea el contenido de <td>, ubica el elemento <td> al final
-        // de la hilera de la tabla
-        var celda = document.createElement("td");
-        var textoCelda = document.createTextNode(
-          clientes[i].nombre + "|" + clientes[i].apellido + "|" + clientes[i].cedula + "|" + clientes[i].fecha + "|" + clientes[i].correo,
-        );
-        celda.appendChild(textoCelda);
-        hilera.appendChild(celda);
-      
-  
-      // agrega la hilera al final de la tabla (al final del elemento tblbody)
-      tblBody.appendChild(hilera);
-    }
-  
-    // posiciona el <tbody> debajo del elemento <table>
-    tabla.appendChild(tblBody);
-    // appends <table> into <body>
-    body.appendChild(tabla);
-    // modifica el atributo "border" de la tabla y lo fija a "2";
-    tabla.setAttribute("border", "2");
+
+const crearPersona = () => {
+  const nombre = document.getElementById('nombres').value;
+  const apellido = document.getElementById('apellidos').value;
+  const cedula = document.getElementById('cedula').value;
+  const fecha = document.getElementById('fecha').value;
+  const correo = document.getElementById('correo').value;
+
+  const persona = {
+      nombre,
+      apellido,
+      cedula,
+      fecha,
+      correo,
+  };
+
+  const listaPersona = JSON.parse(
+      localStorage.getItem('listaPersona')
+  );
+
+  listaPersona.push(persona);
+
+  localStorage.setItem(
+      'listaPersona',
+      JSON.stringify(listaPersona)
+  );
+};
+
+
+const crearTablaPersona = () => {
+  listaPersonaUI.innerHTML = '';
+  if (listaPersona.length === 0) {
+      listaPersonaUI.innerHTML = `
+      <tr>
+        <td colspan="4" style="text-align: center;">No hay personas registradas</td>
+      </tr>
+    `;
+    return;
   }
+  listaPersona.forEach((persona) => {
+      listaPersonaUI.innerHTML += `
+      <tr>
+        <th scope="row"></th>
+        <td>${persona.nombre}</td>
+        <td>${persona.apellido}</td>
+        <td>${persona.cedula}</td>
+        <td>${persona.fecha}</td>
+        <td>${persona.correo}</td>
+      </tr>
+    `;
+  });
+};
 
-  
+//LocalStorage Cita
+
+const crearCita = () => {
+  const fecha = document.getElementById('fecha').value;
+  const medico = document.getElementById('medico').value;
+  const consultorio = document.getElementById('consultorio').value;
+  const cede = document.getElementById('cede').value;
+  const paciente = document.getElementById('paciente').value;
+  const tipoEsp = document.getElementById('tipoEsp').value;
+
+
+  const cita = {
+    fecha,
+    medico,
+    consultorio,
+    cede,
+    paciente,
+    tipoEsp,
+  };
+
+  const listaCita = JSON.parse(localStorage.getItem('listaCita'));
+  listaCita.push(cita);
+  localStorage.setItem('listaCita', JSON.stringify(listaCita));
+  window.location.replace('FormCitas.html');
+};
+
+
+const crearTablaCita = () => {
+  listaCitaUI.innerHTML = '';
+  if (listaCita.length === 0) {
+    listaCitaUI.innerHTML = `
+      <tr>
+        <td colspan="4" style="text-align: center;">No hay citas registradas</td>
+      </tr>
+    `;
+    return;
+  }
+  listaCita.forEach((cita) => {
+    listaCitaUI.innerHTML += `
+      <tr>
+        <th scope="row"></th>
+        <td>${cita.fecha}</td>
+        <td>${cita.medico}</td>
+        <td>${cita.consultorio}</td>
+        <td>${cita.cede}</td>
+        <td>${cita.paciente}</td>
+        <td>${cita.tipoEsp}</td>
+      </tr>
+    `;
+  });
+};
+
+
